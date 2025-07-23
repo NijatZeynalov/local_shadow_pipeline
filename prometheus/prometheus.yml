@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'main_app'
+    static_configs:
+      - targets: ['main_app:8000']
+  - job_name: 'model_v1'
+    static_configs:
+      - targets: ['model_v1:8001']
+  - job_name: 'model_v2_shadow'
+    static_configs:
+      - targets: ['model_v2_shadow:8002']
